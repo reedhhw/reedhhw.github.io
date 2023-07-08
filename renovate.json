@@ -54,9 +54,7 @@
       "description": "Configuration object for the ansible manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)tasks/[^/]+\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)tasks/[^/]+\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -64,10 +62,7 @@
       "description": "Configuration object for the ansible-galaxy manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)requirements\\.ya?ml$",
-          "(^|/)galaxy\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)requirements\\.ya?ml$", "(^|/)galaxy\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -83,9 +78,7 @@
       "description": "Configuration object for the asdf manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.tool-versions$"
-        ]
+        "fileMatch": ["(^|/)\\.tool-versions$"]
       },
       "$ref": "#"
     },
@@ -171,39 +164,25 @@
           "type": "string"
         }
       ],
-      "default": [
-        "at any time"
-      ]
+      "default": ["at any time"]
     },
     "automergeStrategy": {
       "description": "The merge strategy to use when automerging PRs. Used only if `automergeType=pr`.",
       "type": "string",
-      "enum": [
-        "auto",
-        "fast-forward",
-        "merge-commit",
-        "rebase",
-        "squash"
-      ],
+      "enum": ["auto", "fast-forward", "merge-commit", "rebase", "squash"],
       "default": "auto"
     },
     "automergeType": {
       "description": "How to automerge, if enabled.",
       "type": "string",
-      "enum": [
-        "branch",
-        "pr",
-        "pr-comment"
-      ],
+      "enum": ["branch", "pr", "pr-comment"],
       "default": "pr"
     },
     "azure-pipelines": {
       "description": "Configuration object for the azure-pipelines manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "azure.*pipelines?.*\\.ya?ml$"
-        ],
+        "fileMatch": ["azure.*pipelines?.*\\.ya?ml$"],
         "enabled": false
       },
       "$ref": "#"
@@ -228,9 +207,7 @@
       "description": "Configuration object for the batect manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)batect(-bundle)?\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)batect(-bundle)?\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -238,9 +215,7 @@
       "description": "Configuration object for the batect-wrapper manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)batect$"
-        ],
+        "fileMatch": ["(^|/)batect$"],
         "versioning": "semver"
       },
       "$ref": "#"
@@ -249,10 +224,7 @@
       "description": "Configuration object for the bazel manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)WORKSPACE(|\\.bazel)$",
-          "\\.bzl$"
-        ]
+        "fileMatch": ["(^|/)WORKSPACE(|\\.bazel)$", "\\.bzl$"]
       },
       "$ref": "#"
     },
@@ -260,9 +232,7 @@
       "description": "Configuration object for the bazel-module manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)MODULE\\.bazel$"
-        ]
+        "fileMatch": ["(^|/)MODULE\\.bazel$"]
       },
       "$ref": "#"
     },
@@ -270,9 +240,7 @@
       "description": "Configuration object for the bazelisk manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.bazelversion$"
-        ],
+        "fileMatch": ["(^|/)\\.bazelversion$"],
         "pinDigests": false
       },
       "$ref": "#"
@@ -291,30 +259,21 @@
       "description": "Configuration object for the bicep manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "\\.bicep$"
-        ]
+        "fileMatch": ["\\.bicep$"]
       },
       "$ref": "#"
     },
     "binarySource": {
       "description": "Controls how third-party tools like npm or Gradle are called: directly, via Docker sidecar containers, or via dynamic install.",
       "type": "string",
-      "enum": [
-        "global",
-        "docker",
-        "install",
-        "hermit"
-      ],
+      "enum": ["global", "docker", "install", "hermit"],
       "default": "install"
     },
     "bitbucket-pipelines": {
       "description": "Configuration object for the bitbucket-pipelines manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.?bitbucket-pipelines\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)\\.?bitbucket-pipelines\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -352,10 +311,7 @@
       "description": "Configuration object for the buildkite manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "buildkite\\.ya?ml",
-          "\\.buildkite/.+\\.ya?ml$"
-        ],
+        "fileMatch": ["buildkite\\.ya?ml", "\\.buildkite/.+\\.ya?ml$"],
         "commitMessageTopic": "buildkite plugin {{depName}}",
         "commitMessageExtra": "to {{#if isMajor}}{{{prettyNewMajor}}}{{else}}{{{newValue}}}{{/if}}"
       },
@@ -364,20 +320,13 @@
     "bumpVersion": {
       "description": "Bump the version in the package file being updated.",
       "type": "string",
-      "enum": [
-        "major",
-        "minor",
-        "patch",
-        "prerelease"
-      ]
+      "enum": ["major", "minor", "patch", "prerelease"]
     },
     "bundler": {
       "description": "Configuration object for the bundler manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)Gemfile$"
-        ],
+        "fileMatch": ["(^|/)Gemfile$"],
         "versioning": "ruby"
       },
       "$ref": "#"
@@ -395,9 +344,7 @@
       "description": "Configuration object for the cake manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "\\.cake$"
-        ]
+        "fileMatch": ["\\.cake$"]
       },
       "$ref": "#"
     },
@@ -406,9 +353,7 @@
       "type": "object",
       "default": {
         "commitMessageTopic": "Rust crate {{depName}}",
-        "fileMatch": [
-          "(^|/)Cargo\\.toml$"
-        ],
+        "fileMatch": ["(^|/)Cargo\\.toml$"],
         "versioning": "cargo"
       },
       "$ref": "#"
@@ -434,9 +379,7 @@
       "description": "Configuration object for the circleci manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.circleci/config\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)\\.circleci/config\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -449,9 +392,7 @@
       "description": "Configuration object for the cloudbuild manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)cloudbuild\\.ya?ml"
-        ]
+        "fileMatch": ["(^|/)cloudbuild\\.ya?ml"]
       },
       "$ref": "#"
     },
@@ -459,9 +400,7 @@
       "description": "Configuration object for the cocoapods manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)Podfile$"
-        ],
+        "fileMatch": ["(^|/)Podfile$"],
         "versioning": "ruby"
       },
       "$ref": "#"
@@ -493,10 +432,7 @@
     "commitMessageLowerCase": {
       "description": "Lowercase PR- and commit titles.",
       "type": "string",
-      "enum": [
-        "auto",
-        "never"
-      ],
+      "enum": ["auto", "never"],
       "default": "auto"
     },
     "commitMessagePrefix": {
@@ -516,9 +452,7 @@
       "description": "Configuration object for the composer manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)([\\w-]*)composer\\.json$"
-        ],
+        "fileMatch": ["(^|/)([\\w-]*)composer\\.json$"],
         "versioning": "composer"
       },
       "$ref": "#"
@@ -535,9 +469,7 @@
       "description": "Configuration object for the conan manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)conanfile\\.(txt|py)$"
-        ],
+        "fileMatch": ["(^|/)conanfile\\.(txt|py)$"],
         "datasource": "conan",
         "versioning": "conan",
         "enabled": false
@@ -568,10 +500,7 @@
     "constraintsFiltering": {
       "description": "Perform release filtering based on language constraints.",
       "type": "string",
-      "enum": [
-        "none",
-        "strict"
-      ],
+      "enum": ["none", "strict"],
       "default": "none"
     },
     "containerbaseDir": {
@@ -582,9 +511,7 @@
       "description": "Configuration object for the cpanfile manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)cpanfile$"
-        ]
+        "fileMatch": ["(^|/)cpanfile$"]
       },
       "$ref": "#"
     },
@@ -637,11 +564,7 @@
     "dependencyDashboardOSVVulnerabilitySummary": {
       "description": "Control if the Dependency Dashboard issue lists CVEs supplied by [osv.dev](https://osv.dev).",
       "type": "string",
-      "enum": [
-        "none",
-        "all",
-        "unresolved"
-      ],
+      "enum": ["none", "all", "unresolved"],
       "default": "none"
     },
     "dependencyDashboardTitle": {
@@ -653,9 +576,7 @@
       "description": "Configuration object for the deps-edn manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)(?:deps|bb)\\.edn$"
-        ],
+        "fileMatch": ["(^|/)(?:deps|bb)\\.edn$"],
         "versioning": "maven"
       },
       "$ref": "#"
@@ -698,9 +619,7 @@
       "description": "Configuration object for the docker-compose manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -742,20 +661,14 @@
       "description": "Configuration object for the droneci manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.drone\\.yml$"
-        ]
+        "fileMatch": ["(^|/)\\.drone\\.yml$"]
       },
       "$ref": "#"
     },
     "dryRun": {
       "description": "If enabled, perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.",
       "type": "string",
-      "enum": [
-        "extract",
-        "lookup",
-        "full"
-      ],
+      "enum": ["extract", "lookup", "full"],
       "default": null
     },
     "enabled": {
@@ -820,11 +733,7 @@
     "fetchReleaseNotes": {
       "description": "Controls if and when release notes are fetched.",
       "type": "string",
-      "enum": [
-        "off",
-        "branch",
-        "pr"
-      ],
+      "enum": ["off", "branch", "pr"],
       "default": "pr"
     },
     "fileMatch": {
@@ -852,9 +761,7 @@
       "description": "Configuration object for the fleet manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)fleet\\.ya?ml"
-        ]
+        "fileMatch": ["(^|/)fleet\\.ya?ml"]
       },
       "$ref": "#"
     },
@@ -862,9 +769,7 @@
       "description": "Configuration object for the flux manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)flux-system/(?:.+/)?gotk-components\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)flux-system/(?:.+/)?gotk-components\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -894,11 +799,7 @@
     "forkProcessing": {
       "description": "Whether to process forked repositories. By default, all forked repositories are skipped when in `autodiscover` mode.",
       "type": "string",
-      "enum": [
-        "auto",
-        "enabled",
-        "disabled"
-      ],
+      "enum": ["auto", "enabled", "disabled"],
       "default": "auto"
     },
     "forkToken": {
@@ -909,9 +810,7 @@
       "description": "Configuration object for the fvm manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.fvm/fvm_config\\.json$"
-        ],
+        "fileMatch": ["(^|/)\\.fvm/fvm_config\\.json$"],
         "versioning": "semver"
       },
       "$ref": "#"
@@ -922,9 +821,7 @@
       "default": {
         "enabled": false,
         "versioning": "git",
-        "fileMatch": [
-          "(^|/)\\.gitmodules$"
-        ]
+        "fileMatch": ["(^|/)\\.gitmodules$"]
       },
       "$ref": "#"
     },
@@ -951,24 +848,15 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "commit",
-              "push"
-            ]
+            "enum": ["commit", "push"]
           }
         },
         {
           "type": "string",
-          "enum": [
-            "commit",
-            "push"
-          ]
+          "enum": ["commit", "push"]
         }
       ],
-      "default": [
-        "commit",
-        "push"
-      ]
+      "default": ["commit", "push"]
     },
     "gitPrivateKey": {
       "description": "PGP key to use for signing Git commits.",
@@ -982,11 +870,7 @@
     "gitUrl": {
       "description": "Overrides the default resolution for Git remote, e.g. to switch GitLab from HTTPS to SSH-based.",
       "type": "string",
-      "enum": [
-        "default",
-        "ssh",
-        "endpoint"
-      ],
+      "enum": ["default", "ssh", "endpoint"],
       "default": "default"
     },
     "github-actions": {
@@ -1009,9 +893,7 @@
       "description": "Configuration object for the gitlabci manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "\\.gitlab-ci\\.ya?ml$"
-        ]
+        "fileMatch": ["\\.gitlab-ci\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -1019,9 +901,7 @@
       "description": "Configuration object for the gitlabci-include manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "\\.gitlab-ci\\.ya?ml$"
-        ]
+        "fileMatch": ["\\.gitlab-ci\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -1038,17 +918,13 @@
       "items": {
         "type": "string"
       },
-      "default": [
-        "./..."
-      ]
+      "default": ["./..."]
     },
     "gomod": {
       "description": "Configuration object for the gomod manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)go\\.mod$"
-        ],
+        "fileMatch": ["(^|/)go\\.mod$"],
         "pinDigests": false
       },
       "$ref": "#"
@@ -1075,9 +951,7 @@
       "description": "Configuration object for the gradle-wrapper manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
-        ],
+        "fileMatch": ["(^|/)gradle/wrapper/gradle-wrapper\\.properties$"],
         "versioning": "gradle"
       },
       "$ref": "#"
@@ -1114,9 +988,7 @@
           "stable": "https://charts.helm.sh/stable"
         },
         "commitMessageTopic": "helm chart {{depName}}",
-        "fileMatch": [
-          "(^|/)requirements\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)requirements\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -1125,9 +997,7 @@
       "type": "object",
       "default": {
         "commitMessageTopic": "helm values {{depName}}",
-        "fileMatch": [
-          "(^|/)values\\.ya?ml$"
-        ],
+        "fileMatch": ["(^|/)values\\.ya?ml$"],
         "pinDigests": false
       },
       "$ref": "#"
@@ -1140,9 +1010,7 @@
           "stable": "https://charts.helm.sh/stable"
         },
         "commitMessageTopic": "helm chart {{depName}}",
-        "fileMatch": [
-          "(^|/)helmfile\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)helmfile\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -1162,9 +1030,7 @@
           "stable": "https://charts.helm.sh/stable"
         },
         "commitMessageTopic": "helm chart {{depName}}",
-        "fileMatch": [
-          "(^|/)Chart\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)Chart\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -1172,12 +1038,8 @@
       "description": "Configuration object for the hermit manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)bin/hermit$"
-        ],
-        "excludeCommitPaths": [
-          "**/bin/hermit"
-        ],
+        "fileMatch": ["(^|/)bin/hermit$"],
+        "excludeCommitPaths": ["**/bin/hermit"],
         "versioning": "hermit"
       },
       "$ref": "#"
@@ -1187,9 +1049,7 @@
       "type": "object",
       "default": {
         "commitMessageTopic": "Homebrew Formula {{depName}}",
-        "fileMatch": [
-          "^Formula/[^/]+[.]rb$"
-        ]
+        "fileMatch": ["^Formula/[^/]+[.]rb$"]
       },
       "$ref": "#"
     },
@@ -1222,9 +1082,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "enum": [
-                    "composer"
-                  ]
+                  "enum": ["composer"]
                 },
                 "default": null
               },
@@ -1288,9 +1146,7 @@
       "description": "Configuration object for the html manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "\\.html?$"
-        ],
+        "fileMatch": ["\\.html?$"],
         "versioning": "semver",
         "digest": {
           "enabled": false
@@ -1317,10 +1173,7 @@
       "items": {
         "type": "string"
       },
-      "default": [
-        "**/node_modules/**",
-        "**/bower_components/**"
-      ]
+      "default": ["**/node_modules/**", "**/bower_components/**"]
     },
     "ignorePlugins": {
       "description": "Set this to `true` if `allowPlugins=true` but you wish to skip running plugins when updating lock files.",
@@ -1383,20 +1236,14 @@
     "internalChecksFilter": {
       "description": "When and how to filter based on internal checks.",
       "type": "string",
-      "enum": [
-        "strict",
-        "flexible",
-        "none"
-      ],
+      "enum": ["strict", "flexible", "none"],
       "default": "strict"
     },
     "jenkins": {
       "description": "Configuration object for the jenkins manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)plugins\\.(txt|ya?ml)$"
-        ]
+        "fileMatch": ["(^|/)plugins\\.(txt|ya?ml)$"]
       },
       "$ref": "#"
     },
@@ -1404,9 +1251,7 @@
       "description": "Configuration object for the jsonnet-bundler manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)jsonnetfile\\.json$"
-        ],
+        "fileMatch": ["(^|/)jsonnetfile\\.json$"],
         "datasource": "git-tags"
       },
       "$ref": "#"
@@ -1415,9 +1260,7 @@
       "description": "Configuration object for the kotlin-script manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "^.+\\.main\\.kts$"
-        ]
+        "fileMatch": ["^.+\\.main\\.kts$"]
       },
       "$ref": "#"
     },
@@ -1433,9 +1276,7 @@
       "description": "Configuration object for the kustomize manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)kustomization\\.ya?ml$"
-        ],
+        "fileMatch": ["(^|/)kustomization\\.ya?ml$"],
         "pinDigests": false
       },
       "$ref": "#"
@@ -1451,9 +1292,7 @@
       "description": "Configuration object for the leiningen manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)project\\.clj$"
-        ],
+        "fileMatch": ["(^|/)project\\.clj$"],
         "versioning": "maven"
       },
       "$ref": "#"
@@ -1469,9 +1308,7 @@
         "commitMessageAction": "Lock file maintenance",
         "commitMessageTopic": null,
         "commitMessageExtra": null,
-        "schedule": [
-          "before 4am on monday"
-        ],
+        "schedule": ["before 4am on monday"],
         "groupName": null,
         "prBodyDefinitions": {
           "Change": "All locks refreshed"
@@ -1515,9 +1352,7 @@
       "description": "Configuration object for the maven-wrapper manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|\\/).mvn/wrapper/maven-wrapper.properties$"
-        ],
+        "fileMatch": ["(^|\\/).mvn/wrapper/maven-wrapper.properties$"],
         "versioning": "maven"
       },
       "$ref": "#"
@@ -1526,9 +1361,7 @@
       "description": "Configuration object for the meteor manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)package\\.js$"
-        ]
+        "fileMatch": ["(^|/)package\\.js$"]
       },
       "$ref": "#"
     },
@@ -1556,9 +1389,7 @@
       "description": "Configuration object for the mint manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)Mintfile$"
-        ]
+        "fileMatch": ["(^|/)Mintfile$"]
       },
       "$ref": "#"
     },
@@ -1566,9 +1397,7 @@
       "description": "Configuration object for the mix manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)mix\\.exs$"
-        ],
+        "fileMatch": ["(^|/)mix\\.exs$"],
         "versioning": "hex"
       },
       "$ref": "#"
@@ -1577,9 +1406,7 @@
       "description": "Configuration object for the nix manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)flake\\.nix$"
-        ],
+        "fileMatch": ["(^|/)flake\\.nix$"],
         "commitMessageTopic": "nixpkgs",
         "commitMessageExtra": "to {{newValue}}",
         "enabled": false
@@ -1590,9 +1417,7 @@
       "description": "Configuration object for the nodenv manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.node-version$"
-        ],
+        "fileMatch": ["(^|/)\\.node-version$"],
         "versioning": "node"
       },
       "$ref": "#"
@@ -1601,9 +1426,7 @@
       "description": "Configuration object for the npm manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)package\\.json$"
-        ],
+        "fileMatch": ["(^|/)package\\.json$"],
         "versioning": "npm",
         "digest": {
           "prBodyDefinitions": {
@@ -1646,9 +1469,7 @@
       "description": "Configuration object for the nvm manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.nvmrc$"
-        ],
+        "fileMatch": ["(^|/)\\.nvmrc$"],
         "versioning": "node",
         "pinDigests": false
       },
@@ -1705,9 +1526,7 @@
       "description": "Configuration object for the osgi manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)src/main/features/.+\\.json$"
-        ]
+        "fileMatch": ["(^|/)src/main/features/.+\\.json$"]
       },
       "$ref": "#"
     },
@@ -1845,22 +1664,12 @@
                     "type": "array",
                     "items": {
                       "type": "string",
-                      "enum": [
-                        "low",
-                        "neutral",
-                        "high",
-                        "very high"
-                      ]
+                      "enum": ["low", "neutral", "high", "very high"]
                     }
                   },
                   {
                     "type": "string",
-                    "enum": [
-                      "low",
-                      "neutral",
-                      "high",
-                      "very high"
-                    ]
+                    "enum": ["low", "neutral", "high", "very high"]
                   }
                 ]
               },
@@ -2093,9 +1902,7 @@
       "description": "Configuration object for the pep621 manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)pyproject\\.toml$"
-        ]
+        "fileMatch": ["(^|/)pyproject\\.toml$"]
       },
       "$ref": "#"
     },
@@ -2155,9 +1962,7 @@
       "description": "Configuration object for the pip_requirements manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)$"
-        ]
+        "fileMatch": ["(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)$"]
       },
       "$ref": "#"
     },
@@ -2165,9 +1970,7 @@
       "description": "Configuration object for the pip_setup manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)setup\\.py$"
-        ]
+        "fileMatch": ["(^|/)setup\\.py$"]
       },
       "$ref": "#"
     },
@@ -2175,9 +1978,7 @@
       "description": "Configuration object for the pipenv manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)Pipfile$"
-        ]
+        "fileMatch": ["(^|/)Pipfile$"]
       },
       "$ref": "#"
     },
@@ -2210,9 +2011,7 @@
       "description": "Configuration object for the poetry manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)pyproject\\.toml$"
-        ]
+        "fileMatch": ["(^|/)pyproject\\.toml$"]
       },
       "$ref": "#"
     },
@@ -2266,10 +2065,7 @@
               "executionMode": {
                 "description": "Controls when the post upgrade tasks run: on every update, or once per upgrade branch.",
                 "type": "string",
-                "enum": [
-                  "update",
-                  "branch"
-                ],
+                "enum": ["update", "branch"],
                 "default": "update"
               },
               "fileFilters": {
@@ -2278,9 +2074,7 @@
                 "items": {
                   "type": "string"
                 },
-                "default": [
-                  "**/*"
-                ]
+                "default": ["**/*"]
               }
             }
           }
@@ -2293,13 +2087,7 @@
       "items": {
         "type": "string"
       },
-      "default": [
-        "Package",
-        "Type",
-        "Update",
-        "Change",
-        "Pending"
-      ]
+      "default": ["Package", "Type", "Update", "Change", "Pending"]
     },
     "prBodyDefinitions": {
       "description": "Table column definitions to use in PR tables.",
@@ -2349,12 +2137,7 @@
     "prCreation": {
       "description": "When to create the PR for a branch.",
       "type": "string",
-      "enum": [
-        "immediate",
-        "not-pending",
-        "status-success",
-        "approval"
-      ],
+      "enum": ["immediate", "not-pending", "status-success", "approval"],
       "default": "immediate"
     },
     "prFooter": {
@@ -2397,9 +2180,7 @@
       "default": {
         "commitMessageTopic": "pre-commit hook {{depName}}",
         "enabled": false,
-        "fileMatch": [
-          "(^|/)\\.pre-commit-config\\.ya?ml$"
-        ],
+        "fileMatch": ["(^|/)\\.pre-commit-config\\.ya?ml$"],
         "prBodyNotes": [
           "Note: The `pre-commit` manager in Renovate is not supported by the `pre-commit` maintainers or community. Please do not report any problems there, instead [create a Discussion in the Renovate repository](https://github.com/renovatebot/renovate/discussions/new) if you have any questions."
         ]
@@ -2455,9 +2236,7 @@
       "description": "Configuration object for the pub manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)pubspec\\.ya?ml$"
-        ],
+        "fileMatch": ["(^|/)pubspec\\.ya?ml$"],
         "versioning": "npm"
       },
       "$ref": "#"
@@ -2466,9 +2245,7 @@
       "description": "Configuration object for the puppet manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)Puppetfile$"
-        ]
+        "fileMatch": ["(^|/)Puppetfile$"]
       },
       "$ref": "#"
     },
@@ -2476,9 +2253,7 @@
       "description": "Configuration object for the pyenv manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.python-version$"
-        ],
+        "fileMatch": ["(^|/)\\.python-version$"],
         "versioning": "docker"
       },
       "$ref": "#"
@@ -2505,22 +2280,13 @@
     "rebaseWhen": {
       "description": "Controls when Renovate rebases an existing branch.",
       "type": "string",
-      "enum": [
-        "auto",
-        "never",
-        "conflicted",
-        "behind-base-branch"
-      ],
+      "enum": ["auto", "never", "conflicted", "behind-base-branch"],
       "default": "auto"
     },
     "recreateWhen": {
       "description": "Recreate PRs even if same ones were closed previously.",
       "type": "string",
-      "enum": [
-        "auto",
-        "always",
-        "never"
-      ],
+      "enum": ["auto", "always", "never"],
       "default": "auto"
     },
     "redisUrl": {
@@ -2582,11 +2348,7 @@
               "matchStringsStrategy": {
                 "description": "Strategy how to interpret matchStrings.",
                 "type": "string",
-                "enum": [
-                  "any",
-                  "recursive",
-                  "combination"
-                ],
+                "enum": ["any", "recursive", "combination"],
                 "default": "any"
               },
               "packageNameTemplate": {
@@ -2648,11 +2410,7 @@
     "repositoryCache": {
       "description": "This option decides if Renovate uses a JSON cache to speed up extractions.",
       "type": "string",
-      "enum": [
-        "disabled",
-        "enabled",
-        "reset"
-      ],
+      "enum": ["disabled", "enabled", "reset"],
       "default": "disabled"
     },
     "repositoryCacheType": {
@@ -2663,11 +2421,7 @@
     "requireConfig": {
       "description": "Controls Renovate's behavior regarding repository config files such as `renovate.json`.",
       "type": "string",
-      "enum": [
-        "required",
-        "optional",
-        "ignored"
-      ],
+      "enum": ["required", "optional", "ignored"],
       "default": "required"
     },
     "respectLatest": {
@@ -2710,9 +2464,7 @@
       "description": "Configuration object for the ruby-version manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.ruby-version$"
-        ],
+        "fileMatch": ["(^|/)\\.ruby-version$"],
         "versioning": "ruby"
       },
       "$ref": "#"
@@ -2743,9 +2495,7 @@
           "type": "string"
         }
       ],
-      "default": [
-        "at any time"
-      ]
+      "default": ["at any time"]
     },
     "secrets": {
       "description": "Object which holds secret name/value pairs.",
@@ -2769,11 +2519,7 @@
     "semanticCommits": {
       "description": "Enable Semantic Commit prefixes for commits and PR titles.",
       "type": "string",
-      "enum": [
-        "auto",
-        "enabled",
-        "disabled"
-      ],
+      "enum": ["auto", "enabled", "disabled"],
       "default": "auto"
     },
     "separateMajorMinor": {
@@ -2794,9 +2540,7 @@
       "description": "Configuration object for the setup-cfg manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)setup\\.cfg$"
-        ],
+        "fileMatch": ["(^|/)setup\\.cfg$"],
         "versioning": "pep440"
       },
       "$ref": "#"
@@ -2829,17 +2573,13 @@
           "prIgnoreNotification"
         ]
       },
-      "default": [
-        "deprecationWarningIssues"
-      ]
+      "default": ["deprecationWarningIssues"]
     },
     "swift": {
       "description": "Configuration object for the swift manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)Package\\.swift"
-        ],
+        "fileMatch": ["(^|/)Package\\.swift"],
         "versioning": "swift",
         "pinDigests": false
       },
@@ -2858,9 +2598,7 @@
       "type": "object",
       "default": {
         "commitMessageTopic": "Terraform {{depName}}",
-        "fileMatch": [
-          "\\.tf$"
-        ],
+        "fileMatch": ["\\.tf$"],
         "pinDigests": false
       },
       "$ref": "#"
@@ -2869,9 +2607,7 @@
       "description": "Configuration object for the terraform-version manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.terraform-version$"
-        ],
+        "fileMatch": ["(^|/)\\.terraform-version$"],
         "versioning": "hashicorp",
         "extractVersion": "^v(?<version>.*)$"
       },
@@ -2882,9 +2618,7 @@
       "type": "object",
       "default": {
         "commitMessageTopic": "Terragrunt dependency {{depName}}",
-        "fileMatch": [
-          "(^|/)terragrunt\\.hcl$"
-        ]
+        "fileMatch": ["(^|/)terragrunt\\.hcl$"]
       },
       "$ref": "#"
     },
@@ -2892,9 +2626,7 @@
       "description": "Configuration object for the terragrunt-version manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.terragrunt-version$"
-        ],
+        "fileMatch": ["(^|/)\\.terragrunt-version$"],
         "versioning": "hashicorp",
         "extractVersion": "^v(?<version>.+)$"
       },
@@ -2905,9 +2637,7 @@
       "type": "object",
       "default": {
         "commitMessageTopic": "TFLint plugin {{depName}}",
-        "fileMatch": [
-          "\\.tflint\\.hcl$"
-        ],
+        "fileMatch": ["\\.tflint\\.hcl$"],
         "extractVersion": "^v(?<version>.*)$"
       },
       "$ref": "#"
@@ -2929,9 +2659,7 @@
       "description": "Configuration object for the travis manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "^\\.travis\\.ya?ml$"
-        ],
+        "fileMatch": ["^\\.travis\\.ya?ml$"],
         "major": {
           "enabled": false
         },
@@ -2965,10 +2693,7 @@
     "useBaseBranchConfig": {
       "description": "Whether to read configuration from `baseBranches` instead of only the default branch.",
       "type": "string",
-      "enum": [
-        "merge",
-        "none"
-      ],
+      "enum": ["merge", "none"],
       "default": "none"
     },
     "userStrings": {
@@ -2989,9 +2714,7 @@
       "description": "Configuration object for the velaci manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "(^|/)\\.vela\\.ya?ml$"
-        ]
+        "fileMatch": ["(^|/)\\.vela\\.ya?ml$"]
       },
       "$ref": "#"
     },
@@ -3064,9 +2787,7 @@
       "description": "Configuration object for the woodpecker manager",
       "type": "object",
       "default": {
-        "fileMatch": [
-          "^\\.woodpecker(?:/[^/]+)?\\.ya?ml$"
-        ]
+        "fileMatch": ["^\\.woodpecker(?:/[^/]+)?\\.ya?ml$"]
       },
       "$ref": "#"
     },
